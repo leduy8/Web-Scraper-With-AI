@@ -1,0 +1,5 @@
+To run streamlit app:
+
+```bash
+streamlit run main.py
+```
