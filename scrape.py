@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 
 
-def scrape_website(website):
+def scrape_website_locally(website):
     print("Launching Chrome Browser...")
 
     chrome_driver_path = "./chromedriver"
@@ -22,9 +22,14 @@ def scrape_website(website):
         print("Page loaded. Scraping data...")
         html = driver.page_source
         print("Scraping complete!")
+        
         return html
     finally:
         driver.quit()
+
+
+def scrape_website_remotely(website):
+    pass
 
 
 def extract_body_content(html_content):

@@ -1,6 +1,6 @@
 import streamlit as st
 from scrape import (
-    scrape_website,
+    scrape_website_locally,
     clean_body_content,
     split_dom_content,
     extract_body_content
@@ -10,11 +10,10 @@ from parse import parse_with_ollama
 st.title("AI Web Scraper")
 url = st.text_input("Enter the website URL")
 
-if st.button("Scrape Site"):
+if st.button("Scrape Site Locally"):
     if url:
         st.write("Scraping the website...")
-        # Add your scraping logic here
-        result = scrape_website(url)
+        result = scrape_website_locally(url)
         body_content = extract_body_content(result)
         cleaned_content = clean_body_content(body_content)
         st.session_state.dom_content = cleaned_content
@@ -23,6 +22,9 @@ if st.button("Scrape Site"):
         st.write("Scraping complete!")
     else:
         st.error("Please enter a valid URL")
+
+if st.button("Scrape Site Remotely"):
+    st.error("Not implemented yet")
 
 if "dom_content" in st.session_state:
     parse_description = st.text_area("Describe what you want to parse from the DOM")
