@@ -7,7 +7,10 @@ from scrape import (
 )
 from parse import parse_with_ollama
 
-st.title("AI Web Scraper")
+st.title("Web Scraper with AI")
+
+st.session_state.dom_content = None
+
 url = st.text_input("Enter the website URL")
 
 if st.button("Scrape Site Locally"):
@@ -35,3 +38,5 @@ if "dom_content" in st.session_state:
             dom_chunks = split_dom_content(st.session_state.dom_content)
             result = parse_with_ollama(dom_chunks, parse_description)
             st.write(result)
+        else:
+            st.error("Please enter a description of what you want to parse")
