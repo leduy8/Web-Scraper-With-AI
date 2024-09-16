@@ -3,3 +3,5 @@ To run streamlit app:
 ```bash
 streamlit run main.py
 ```
+
+chromedriver download from here: https://googlechromelabs.github.io/chrome-for-testing/#stable
