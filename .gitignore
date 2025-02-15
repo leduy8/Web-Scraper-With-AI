@@ -192,3 +192,4 @@ pyrightconfig.json
 
 .DS_Store
 chromedriver
+chromedriver.exe

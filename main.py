@@ -9,7 +9,7 @@ from parse import parse_with_ollama
 
 st.title("Web Scraper with AI")
 
-st.session_state.dom_content = None
+st.session_state.setdefault("dom_content", None)
 
 url = st.text_input("Enter the website URL")
 

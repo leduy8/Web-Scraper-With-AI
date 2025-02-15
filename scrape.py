@@ -9,6 +9,7 @@ def scrape_website_locally(website):
     print("Launching Chrome Browser...")
 
     chrome_driver_path = "./chromedriver"
+    # chrome_driver_path = "./chromedriver.exe" # Windows
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(
         service=Service(chrome_driver_path),
